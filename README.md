@@ -69,7 +69,7 @@ python reconstruct.py slices/from-mesh -o reconstructed/reconstructed.stl --view
 
 | Original (OnShape) | Reconstructed |
 |---|---|
-| ![Original CAD part](examples/original_cad.png) | ![Reconstructed mesh](examples/reconstruction.png) |
+| <img src="examples/original_cad.png" height="250" alt="Original CAD part"> | <img src="examples/reconstruction.png" height="250" alt="Reconstructed mesh"> |
 
 Reconstructing it and comparing extents:
 
