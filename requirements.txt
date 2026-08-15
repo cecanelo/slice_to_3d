@@ -1,0 +1,7 @@
+numpy
+scikit-image
+trimesh
+imageio
+Pillow
+shapely
+pyglet<2
