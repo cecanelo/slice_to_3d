@@ -40,7 +40,7 @@ Each run writes into `<out-folder>/<shape>/`.
 ### Slicing a CAD mesh
 
 ```
-python generate_slices.py --pixel-size 1.0 --layer-height 2.0 --out-folder slices from-mesh --input examples/onshape_part.stl
+python generate_slices.py --pixel-size 0.1 --layer-height 0.1 --out-folder slices from-mesh --input examples/onshape_part.stl
 ```
 
 Writes into `<out-folder>/from-mesh/`. The mesh's own bounding box determines the canvas size and layer count — no shape parameters needed.
@@ -65,7 +65,7 @@ python reconstruct.py slices/from-mesh -o reconstructed/reconstructed.stl --view
 
 ## Example
 
-`examples/onshape_part.stl` and `slices/from-mesh/` in this repo are a worked example: a bracket part exported from OnShape, sliced at `--pixel-size 1.0 --layer-height 2.0`.
+`examples/onshape_part.stl` and `slices/from-mesh/` in this repo are a worked example: a bracket part exported from OnShape, sliced at `--pixel-size 0.1 --layer-height 0.1`.
 
 | Original (OnShape) | Reconstructed |
 |---|---|
@@ -74,8 +74,8 @@ python reconstruct.py slices/from-mesh -o reconstructed/reconstructed.stl --view
 Reconstructing it and comparing extents:
 
 ```
-original extents (mm):      [ 22.5        100.          49.94200134]
-reconstructed extents (mm): [ 22.60000229 100.00000305  49.90000076]
+original extents (mm):      [100.          49.94199944  22.5       ]
+reconstructed extents (mm): [100.00000305  50.00000191  22.50000114]
 ```
 
 ## Notes

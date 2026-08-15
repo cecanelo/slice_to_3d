@@ -90,6 +90,14 @@ def rasterize_polygons(polygons, center_x, center_y, img_width_px, img_height_px
             py = (y - center_y) / pixel_size + img_height_px / 2
             pixel_coords.append((px, py))
         draw.polygon(pixel_coords, fill=255)
+
+        for interior in poly.interiors:
+            hole_coords = []
+            for x, y in interior.coords:
+                px = (x - center_x) / pixel_size + img_width_px / 2
+                py = (y - center_y) / pixel_size + img_height_px / 2
+                hole_coords.append((px, py))
+            draw.polygon(hole_coords, fill=0)
     return np.array(img) > 0
 
 def generate_layers(args):
