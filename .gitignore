@@ -5,5 +5,4 @@ __pycache__/
 # generated outputs - keep only the OnShape example, drop the parametric-shape ones
 slices/*/
 !slices/from-mesh/
-out/*.stl
-!out/onshape_part.stl
+reconstructed/*.stl

@@ -40,7 +40,7 @@ Each run writes into `<out-folder>/<shape>/`.
 ### Slicing a CAD mesh
 
 ```
-python generate_slices.py --pixel-size 1.0 --layer-height 2.0 --out-folder slices from-mesh --input out/onshape_part.stl
+python generate_slices.py --pixel-size 1.0 --layer-height 2.0 --out-folder slices from-mesh --input examples/onshape_part.stl
 ```
 
 Writes into `<out-folder>/from-mesh/`. The mesh's own bounding box determines the canvas size and layer count — no shape parameters needed.
@@ -48,7 +48,7 @@ Writes into `<out-folder>/from-mesh/`. The mesh's own bounding box determines th
 ### Reconstructing
 
 ```
-python reconstruct.py slices/from-mesh -o out/reconstructed.stl
+python reconstruct.py slices/from-mesh -o reconstructed/reconstructed.stl
 ```
 
 Options:
@@ -60,12 +60,18 @@ Options:
 Example combining everything:
 
 ```
-python reconstruct.py slices/from-mesh -o out/reconstructed.stl --view --color 100 150 200 --compare-to out/onshape_part.stl
+python reconstruct.py slices/from-mesh -o reconstructed/reconstructed.stl --view --color 100 150 200 --compare-to examples/onshape_part.stl
 ```
 
 ## Example
 
-`out/onshape_part.stl` and `slices/from-mesh/` in this repo are a worked example: a bracket part exported from OnShape, sliced at `--pixel-size 1.0 --layer-height 2.0`. Reconstructing it and comparing extents:
+`examples/onshape_part.stl` and `slices/from-mesh/` in this repo are a worked example: a bracket part exported from OnShape, sliced at `--pixel-size 1.0 --layer-height 2.0`.
+
+| Original (OnShape) | Reconstructed |
+|---|---|
+| ![Original CAD part](examples/original_cad.png) | ![Reconstructed mesh](examples/reconstruction.png) |
+
+Reconstructing it and comparing extents:
 
 ```
 original extents (mm):      [ 22.5        100.          49.94200134]
